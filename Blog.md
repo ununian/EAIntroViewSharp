@@ -159,8 +159,7 @@ namespace EAIntroView.Sample
         public EAIntroView_SampleViewController(IntPtr handle)
             : base(handle)
         {
-        }
-
+        } 
         /// <summary>
         /// App设置
         /// </summary>
@@ -171,12 +170,10 @@ namespace EAIntroView.Sample
             {
                 return CrossSettings.Current;
             }
-        }
-
+        } 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();
-			
+            base.ViewDidLoad(); 
             // Perform any additional setup after loading the view, typically from a nib.
     
             //在主界面中添加一个UILabel用于区分
