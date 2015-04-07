@@ -146,12 +146,14 @@ AddOrUpdateValue<T>(string key,T value);
 >* 通过Edit References引用绑定工程。
 >* 通过Nuget引用Settings插件
 ###3.修改EAIntroView_SampleViewController文件如下：
+
 ```csharp
 using System;
 using UIKit;
 using Refractored.Xam.Settings;
 using Refractored.Xam.Settings.Abstractions;
 using CoreGraphics;
+
 namespace EAIntroView.Sample
 {
     public partial class EAIntroView_SampleViewController : UIViewController
@@ -160,6 +162,7 @@ namespace EAIntroView.Sample
             : base(handle)
         {
         } 
+        
         /// <summary>
         /// App设置
         /// </summary>
@@ -171,6 +174,7 @@ namespace EAIntroView.Sample
                 return CrossSettings.Current;
             }
         } 
+        
         public override void ViewDidLoad()
         {
             base.ViewDidLoad(); 
