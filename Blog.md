@@ -15,6 +15,7 @@
 >*  [Settings插件][2] (JamesMontemagno制作的插件之一，用来记录App的设置数据）
   https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Settings
   
+------
 ##一、绑定EAIntroView
 为了使用EAIntroView我们首先需要将源生的Ojbect-C库绑定成Xamarin能用的程序集。
 Xamarin绑定请参考Xamarin官网的教程，我只会讲主要的操作和贴一些关键的代码。
@@ -23,12 +24,14 @@ Xamarin绑定请参考Xamarin官网的教程，我只会讲主要的操作和贴
 在有了Objective Sharpie后绑定已经比较方便了，基本上只要稍微修改下自动生成ApiDefinitions文件即可。
 
 ###1.获取EAIntroView源代码
+
 用git命令将EAIntroView克隆下来，并稍微浏览下源生的Ojbect-C代码
 ```
 git clone https://github.com/ealeksandrov/EAIntroView.git
 ```
 
 ###2.生成静态库
+
 在XCode中建立新的iOS Cocoa Touch Static Library，名字叫做EAIntroViewStatic。
 
 将EaintroView的源代码文件（EAIntroView文件夹中，共4个）复制到XCode的工程中。
@@ -44,6 +47,7 @@ git clone https://github.com/ealeksandrov/EAIntroView.git
 ![代码签名][3]
 
 ###3.制作模拟器与真机都能使用的通用类库
+
 然后我们需要将.a文件制作成通用类库
 >参考[这篇文章][4]
 >官网的绑定教程中也有提及
@@ -81,6 +85,7 @@ libEAIntroView.a文件就是最终的生成结果。
 
 
 ##4.利用Objective Sharpie工具进行绑定
+
 首先还是在Xamarin中建立iOS Binding Project。
 
 将刚刚生成的.a文件拖入到工程中，并修改linkWith描述文件
@@ -107,8 +112,11 @@ ApiDefinitions.cs文件太长我就不贴了，到时候会放在Github上。
 
 至此我们生成了Xamarin能使用的dll文件。
 
+------
 ##二、Settings插件的使用
+
 ###1.安装Settings插件
+
 有2种方式
 >* [通过Nuget包管理器下载][5]
 >* [通过源代码自己编译][6] 
@@ -121,6 +129,7 @@ Install-Package Xam.Plugins.Settings
  ![iOS额外设置][7]
   
 ###2.基本教程
+
 参考
 >* http://components.xamarin.com/gettingstarted/settingsplugin
 >* https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Settings
@@ -137,10 +146,11 @@ AddOrUpdateValue<T>(string key,T value);
 
 设置的生命周期与应用程序一样，当应用程序被卸载时清空。
 
-##三、实例
-终于到这个环节了...
+------
+##三、实例 
 
 ###1.新建工程
+
 >* 在刚刚的Binding Project的解决方案中新建一个iOS的SingleView工程，工程名为EAintroView.Sample。
 ###2.添加引用
 >* 通过Edit References引用绑定工程。
@@ -235,13 +245,13 @@ namespace EAIntroView.Sample
 
 有关EAIntroView的详细配置请参考Github的原项目，样式还是挺多的。
 
+------
 ##四、总结
 本文主要描述了
-`
+
 >*  Settings插件的使用
 >*  绑定了一个叫EAintroView的iOS第三方库
->*  利用以上2点制作了一个简单欢迎界面
-
+>*  利用以上2点制作了一个简单欢迎界面 
 > 相关源代码在 https://github.com/unhappy224/EAIntroViewSharp
 
   [1]:https://github.com/ealeksandrov/EAIntroView
