@@ -152,9 +152,11 @@ AddOrUpdateValue<T>(string key,T value);
 ###1.新建工程
 
 >* 在刚刚的Binding Project的解决方案中新建一个iOS的SingleView工程，工程名为EAintroView.Sample。
+
 ###2.添加引用
 >* 通过Edit References引用绑定工程。
 >* 通过Nuget引用Settings插件
+
 ###3.修改EAIntroView_SampleViewController文件如下：
 
 ```csharp
