@@ -34,7 +34,7 @@ git clone https://github.com/ealeksandrov/EAIntroView.git
 
 在XCode中建立新的iOS Cocoa Touch Static Library，名字叫做EAIntroViewStatic。
 
-将EaintroView的源代码文件（EAIntroView文件夹中，共4个）复制到XCode的工程中。
+将EAIntroView的源代码文件（EAIntroView文件夹中，共4个）复制到XCode的工程中。
 
 按下Command+B编译，我们会发现提示缺少了EARestrictedScrollView相关的文件。这是因为EAIntroView依赖于EARestrictedScrollView造成的，EARestrictedScrollView是EAIntroView的作者的另一个第三方库。
 
@@ -253,6 +253,8 @@ namespace EAIntroView.Sample
 >*  绑定了一个叫EAintroView的iOS第三方库
 >*  利用以上2点制作了一个简单欢迎界面 
 > 相关源代码在 https://github.com/unhappy224/EAIntroViewSharp
+> 如有疑问可以写在评论中，或者联系我：unhappy224@163.com  QQ:104228916 
+> 欢迎加入QQ群：230865920
 
   [1]:https://github.com/ealeksandrov/EAIntroView
   [2]:https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Settings
